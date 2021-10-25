@@ -1,0 +1,15 @@
+{% extends 'navbar.html' %}
+
+{% block body %}
+<div class="container" style="margin-top: 60px">
+    <h2 class="text-center text-primary font-weight-bold">Admin Login</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label><b>Admin Name</b></label>
+            <input type="text" name="username" class="form-control">
+
+            <label><b>Admin Name</b></label>
+            <input type="password" name="pwd" class="form-control">
+        </form>
+</div>
+{% endblock body %}

@@ -7,3 +7,6 @@ def About(request):
 
 def Contact(request):
     return render(request, 'contact.html')
+
+def Login(request):
+    return render(request, 'login.html')
