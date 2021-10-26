@@ -2,17 +2,17 @@
 
 {% block body %}
 
-{% ifequal error = "no" %}
-<script>
-    alert('Logged In Sucessfully');
-    window.location = ('{% url 'home' %}');
-</script>
+{% ifequal error "no" %}
+    <script>
+        alert('Logged In Sucessfully');
+        window.location = ('{% url 'home' %}');
+    </script>
 {% endifequal %}
 
-{% ifequal error = "yes" %}
-<script>
-    alert('Invalid Login Credentials !!! Please Try Again');
-</script>
+{% ifequal error "yes" %}
+    <script>
+        alert('Invalid Login Credentials !!! Please Try Again');
+    </script>
 {% endifequal %}
 
 
