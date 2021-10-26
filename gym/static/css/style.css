@@ -4,4 +4,5 @@
 
 .nav-link:hover{
     background-color: lightblue !important;
+    border-radius: 10px;
 }
