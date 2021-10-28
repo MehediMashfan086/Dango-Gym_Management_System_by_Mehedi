@@ -13,7 +13,7 @@
 
 <nav class="navbar navbar-expand-md bg-primary navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Gym Management</a>
+  <a class="navbar-brand" href="{% url 'login' %}">Gym Management</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#abc">
@@ -34,6 +34,7 @@
         <a class="nav-link" href="{% url 'contact' %}">Contact</a>
       </li>
       {% endif %}
+      
       {% if request.user.is_staff %}
       <li class="nav-item">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
