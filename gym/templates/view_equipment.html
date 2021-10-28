@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+
+{% block body %}
+
+
+
+
+<div class="container" style="margin-top: 60px">
+    <h2 class="text-center text-primary font-weight-bold">View Equipment</h2>
+    <table id="example" class="table table-hover">
+        <thead>
+            <tr>
+                <th>Equipment Name</th>
+                <th>Price(In Tk.)</th>
+                <th>Unit</th>
+                <th>Purchase Date</th>
+                <th>Description</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in equipment %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    <td>{{i.price}}</td>
+                    <td>{{i.unit}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.description}}</td>
+                    <td><a class="btn btn-danger" href="{% url 'delete_equipment' i.id %}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock body %}
