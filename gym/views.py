@@ -51,6 +51,7 @@ def Add_Enquiry(request):
         e = request.POST['emailid']
         a = request.POST['age']
         g = request.POST.get('gender')
+        
 
         try:
             Enquiry.objects.create(name = n, contact = c, emailid = e, age = a, gender = g)
