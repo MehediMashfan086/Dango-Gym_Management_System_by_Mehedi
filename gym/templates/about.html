@@ -1,5 +1,21 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block body %}
-    <h1>About Us</h1>
+    <div class="container" style="margin-top: 60px">
+    <h2 class="text-center text-primary font-weight-bold">About Us</h2>
+        <br><br><br><br>
+          <div class="row">
+             <div class="col-sm-4 text-center">
+                <img src="{% static 'images/about-us.jpg' %}" width="300" height="200" class="img-responsive">
+             </div>
+
+             <div class="col-sm-8 text-center mt-5">
+                Hello Mr/Mrs,<br>
+                This is a simple gym management project developed by Mehedi Hasan using Pythom, Django, HTML, CSS, JS and Bootstrap.
+             </div>
+          </div>
+    </div>
+    <footer class="text-center font-weight-bold mt-5">
+       <h5>Copyright &copy; 2021, Mehedi Hasan, All Rights Reserved.</h5>
+    </footer>
 {% endblock body %}

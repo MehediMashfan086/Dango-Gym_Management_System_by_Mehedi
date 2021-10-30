@@ -1,5 +1,5 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block body %}
 
 {% ifequal error "no" %}
@@ -31,5 +31,15 @@
 
             <input type="submit" value= "Login" class="form-control btn btn-primary">
         </form>
+        <div class="row">
+             <div class="col-sm-4 text-center">
+                <img src="{% static 'images/about-us.jpg' %}" width="300" height="200" class="img-responsive">
+             </div>
+
+             <div class="col-sm-8 text-center mt-5">
+                Hello Mr/Mrs,<br>
+                This is a simple gym management project developed by Mehedi Hasan using Pythom, Django, HTML, CSS, JS and Bootstrap.
+             </div>
+            </div>
 </div>
 {% endblock body %}

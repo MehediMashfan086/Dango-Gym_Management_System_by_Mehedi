@@ -13,8 +13,29 @@ def Contact(request):
 def Index(request):
     if not request.user.is_staff:
         return redirect('login')
+    enquiry = Enquiry.objects.all()
+    plan = Plan.objects.all()
+    equipment = Equipment.objects.all()
+    member = Member.objects.all()
 
-    return render(request, 'index.html')
+    enquiry1 = 0
+    plan1 = 0
+    equipment1 = 0
+    member1 = 0
+
+    for i in enquiry:
+        enquiry1 += 1
+
+    for i in plan:
+        plan1 += 1
+
+    for i in equipment:
+        equipment1 += 1
+
+    for i in member:
+        member1 += 1
+    d = {'enquiry1': enquiry1, 'plan1': plan1, 'equipment1': equipment1, 'member1': member1}
+    return render(request, 'index.html', d)
 
 def Login(request):
     error = ""
