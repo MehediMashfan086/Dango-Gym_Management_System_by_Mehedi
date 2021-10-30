@@ -33,4 +33,13 @@ urlpatterns = [
     path('view_equipment', View_Equipment, name='view_equipment'),
     path('delete_equipment(?P<int:pid>)', Delete_Equipment, name='delete_equipment'),
 
+    path('add_plan', Add_Plan, name='add_plan'),
+    path('view_plan', View_Plan, name='view_plan'),
+    path('delete_plan(?P<int:pid>)', Delete_Plan, name='delete_plan'),
+
+    path('add_member', Add_Member, name='add_member'),
+    path('view_member', View_Member, name='view_member'),
+    path('delete_member(?P<int:pid>)', Delete_Member, name='delete_member'),
+
+
 ]

@@ -109,3 +109,73 @@ def Delete_Equipment(request, pid):
     equipment = Equipment.objects.get(id = pid)
     equipment.delete()
     return redirect('view_equipment')
+
+def Add_Plan(request):
+    error = ""
+    if not request.user.is_staff:
+        return redirect('login')
+    
+    if request.method == "POST":
+        n = request.POST['name']
+        a = request.POST['amount']
+        d = request.POST['duration']
+
+        try:
+            Plan.objects.create(name = n, amount = a, duration = d)
+            error = "no"
+        except:
+            error = "yes"
+    d = {'error': error}
+    return render(request, 'add_plan.html', d)
+
+def View_Plan(request):
+    if not request.user.is_staff:
+        return redirect('login')
+    plan = Plan.objects.all()
+    d = {'plan': plan}
+    return render(request, 'view_plan.html', d)
+
+def Delete_Plan(request, pid):
+    if not request.user.is_staff:
+        return redirect('login')
+    plan = Plan.objects.get(id = pid)
+    plan.delete()
+    return redirect('view_plan')
+
+def Add_Member(request):
+    error = ""
+    if not request.user.is_staff:
+        return redirect('login')
+    
+    if request.method == "POST":
+        n = request.POST['name']
+        c = request.POST['contact']
+        e = request.POST['emailid']
+        a = request.POST['age']
+        g = request.POST['gender']
+        p = request.POST['plan']
+        jd = request.POST['joindate']
+        ed = request.POST['expiredate']
+        i = request.POST['initialamount']
+
+        try:
+            Member.objects.create(name = n, contact = c, emailid = e, age = a, gender = g, plan = p, joindate = jd, expiredate = ed, initialamount = i)
+            error = "no"
+        except:
+            error = "yes"
+    d = {'error': error}
+    return render(request, 'add_member.html', d)
+
+def View_Member(request):
+    if not request.user.is_staff:
+        return redirect('login')
+    member = Member.objects.all()
+    d = {'member': member}
+    return render(request, 'view_member.html', d)
+
+def Delete_Member(request, pid):
+    if not request.user.is_staff:
+        return redirect('login')
+    member = Member.objects.get(id = pid)
+    member.delete()
+    return redirect('view_member')

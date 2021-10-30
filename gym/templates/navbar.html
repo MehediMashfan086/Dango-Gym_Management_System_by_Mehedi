@@ -78,8 +78,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Plan</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Add Plan</a>
-            <a class="dropdown-item" href="#">View Plan</a>
+            <a class="dropdown-item" href="{% url 'add_plan' %}">Add Plan</a>
+            <a class="dropdown-item" href="{% url 'view_plan' %}">View Plan</a>
           </div>
       </li>
 
@@ -88,6 +88,14 @@
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{% url 'add_equipment' %}">Add Equipment</a>
             <a class="dropdown-item" href="{% url 'view_equipment' %}">View Equipment</a>
+          </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'add_member' %}">Add Member</a>
+            <a class="dropdown-item" href="{% url 'view_member' %}">View Member</a>
           </div>
       </li>
 
