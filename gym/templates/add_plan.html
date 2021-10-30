@@ -1,5 +1,5 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block body %}
 
 
@@ -21,7 +21,26 @@
 
             <input type="submit" value= "Submit" class="form-control btn btn-primary">
         </form>
+
+        <div class="row">
+             <div class="col-sm-3 text-center">
+                <img src="{% static 'images/about-us.jpg' %}" width="300" height="200" class="img-responsive">
+             </div>
+
+             <div class="col-sm-3 text-center">
+                <img src="{% static 'images/1.jpg' %}" width="300" height="200" class="img-responsive">
+             </div>
+
+             <div class="col-sm-3 text-center">
+                <img src="{% static 'images/2.jpg' %}" width="300" height="200" class="img-responsive">
+             </div>
+
+             <div class="col-sm-3 text-center">
+                <img src="{% static 'images/3.png' %}" width="250" height="200" class="img-responsive">
+             </div>
+        </div>
 </div>
+
 
 {% ifequal error "no" %}
     <script>
