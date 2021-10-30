@@ -146,7 +146,7 @@ def Add_Member(request):
     error = ""
     if not request.user.is_staff:
         return redirect('login')
-    
+    plan1 = Plan.objects.all()
     if request.method == "POST":
         n = request.POST['name']
         c = request.POST['contact']
@@ -157,13 +157,13 @@ def Add_Member(request):
         jd = request.POST['joindate']
         ed = request.POST['expiredate']
         i = request.POST['initialamount']
-
+        plan = Plan.objects.filter(name = p).first()
         try:
-            Member.objects.create(name = n, contact = c, emailid = e, age = a, gender = g, plan = p, joindate = jd, expiredate = ed, initialamount = i)
+            Member.objects.create(name = n, contact = c, emailid = e, age = a, gender = g, plan = plan, joindate = jd, expiredate = ed, initialamount = i)
             error = "no"
         except:
             error = "yes"
-    d = {'error': error}
+    d = {'error': error, 'plan': plan1}
     return render(request, 'add_member.html', d)
 
 def View_Member(request):

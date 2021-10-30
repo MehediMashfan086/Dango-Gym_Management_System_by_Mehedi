@@ -5,7 +5,7 @@
 
 
 <div class="container" style="margin-top: 60px">
-    <h2 class="text-center text-primary font-weight-bold">Add Member</h2>
+    <h2 class="text-center text-primary font-weight-bold">Add New Member</h2>
         <form method="post">
             {% csrf_token %}
             <label><b>Member Name</b></label>
@@ -27,8 +27,11 @@
             <br>
 
             <label><b>Plan Name</b></label>
-            <input type="text" name="plan" class="form-control" required>
-
+            <select name="plan" class="form-control" required>
+               {% for i in plan %}
+                <option value="{{i.name}}">{{i.name}}</option>
+               {% endfor %}
+            </select>
             <label><b>Join Date</b></label>
             <input type="date" name="joindate" class="form-control" required>
 
